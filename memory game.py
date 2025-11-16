@@ -80,6 +80,8 @@ def easy():
                     game_score.configure(text=score)
                     for button in clicked:             #makes cards unavailable
                             button.configure(state="disabled")
+                    if score == 10:
+                        messagebox.showinfo("You win!")
                 else:
                     if len(lives_text)>1:                 #checks if lives are available and removes one for wrong selection
                         lives_text = lives_text[:len(lives_text)-1]
@@ -170,6 +172,8 @@ def medium():
                     game_score.configure(text=score)
                     for button in clicked:             #makes cards unavailable
                             button.configure(state="disabled")
+                    if score == 15:
+                        messagebox.showinfo("You win!")
                 else:
                     if len(lives_text)>1:                 #checks if lives are available and removes one for wrong selection
                         lives_text = lives_text[:len(lives_text)-1]
@@ -263,6 +267,8 @@ def hard():
                     game_score.configure(text=score)
                     for button in clicked:             #makes cards unavailable
                             button.configure(state="disabled")
+                    if score == 15:
+                        messagebox.showinfo("You win!")
                 else:
                     if len(lives_text)>1:                 #checks if lives are available and removes one for wrong selection
                         lives_text = lives_text[:len(lives_text)-1]
@@ -280,7 +286,7 @@ def hard():
     button_value=[3, 2, 4, 3, 6, 6, 5, 2, 5, 4]*3#cards
     random.shuffle(button_value)
     a=0
-    for j in range(7):
+    for j in range(6):
         for i in range(5):
             x=Cards(button_value[a],j,i)
             a+=1
@@ -313,4 +319,5 @@ h_t_p.bind("<Enter>",on_enter)
 h_t_p.bind("<Leave>",on_leave)
 
 x.mainloop()
+
 
